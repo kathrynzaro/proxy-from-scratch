@@ -9,6 +9,7 @@ const headers = {
 
 
 exports.handler = async (event, context) => {
+  console.log(process.env);
   try {
     const response = await fetch(`https://api.yelp.com/v3/businesses/search?location=${event.queryStringParameters.yelpQuery}`, {
       headers: {
