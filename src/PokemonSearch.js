@@ -2,14 +2,17 @@ import React from 'react';
 import { useEffect, useState } from 'react';
 import PokemonList from './PokemonList';
 import { getPokemon } from './services/fetch-utils';
+import Spinner from './Spinner';
 
 export default function PokemonSearch() {
   const [pokemon, setPokemon] = useState([]);
   const [pokemonQuery, setPokemonQuery] = useState('');
+  const [loading, setLoading] = useState(false);
 
   async function doLoad() {
+    setLoading(true);
     const data = await getPokemon(pokemonQuery);
-
+    setLoading(false);
     setPokemon(data.results);
   }
 
@@ -29,7 +32,11 @@ export default function PokemonSearch() {
         <input value={pokemonQuery} onChange={e => setPokemonQuery(e.target.value)} />
         <button>search</button>
       </form>
-      <PokemonList pokemon={pokemon} />
+      {
+        loading
+          ? <Spinner />
+          : <PokemonList pokemon={pokemon} />
+      }
     </div>
   );
 }
