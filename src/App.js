@@ -1,6 +1,7 @@
 import './App.css';
 import PokemonSearch from './PokemonSearch';
 import YelpSearch from './YelpSearch';
+import WeatherSearch from './WeatherSearch';
 
 
 function App() {
@@ -12,7 +13,10 @@ function App() {
       </div>
       <div>
         <YelpSearch/>
-        
+      </div>
+      <div>
+        get the weather, in kelvin!
+        <WeatherSearch/>
       </div>
     </div>
   );
