@@ -15,7 +15,7 @@ export default function PokemonSearch() {
 
   useEffect(() => {
     doLoad();
-  }, []);
+  }, []); //eslint-disable-line
 
   async function handleSubmit(e) {
     e.preventDefault();
