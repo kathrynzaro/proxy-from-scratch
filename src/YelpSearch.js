@@ -1,12 +1,12 @@
 import React from 'react';
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import BusinessesList from './BusinessesList';
 import { getYelp } from './services/fetch-utils';
 import Spinner from './Spinner';
 
 export default function YelpSearch() {
   const [businesses, setBusinesses] = useState([]);
-  const [yelpQuery, setYelpQuery] = useState('97214');
+  const [yelpQuery, setYelpQuery] = useState('');
   const [loading, setLoading] = useState(false);
 
   async function loadYelp() {
@@ -17,10 +17,10 @@ export default function YelpSearch() {
     setBusinesses(data.businesses);
   }
 
-  useEffect(() => {
-    loadYelp();
+  // useEffect(() => {
+  //   loadYelp();
 
-  }, []); //eslint-disable-line
+  // }, []); //eslint-disable-line
 
   async function handleYelpSubmit(e) {
     e.preventDefault();
