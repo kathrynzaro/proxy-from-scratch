@@ -11,7 +11,7 @@ const headers = {
 exports.handler = async (event, context) => {
   console.log(process.env);
   try {
-    const response = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${event.queryStringParameters.weatherQuery}&appid=${process.env.WEATHER_KEY}`);
+    const response = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${event.queryStringParameters.weatherQuery}&appid=${process.env.WEATHER_KEY}&units=imperial`);
     const data = await response.json();
     const json = JSON.stringify(data);
     

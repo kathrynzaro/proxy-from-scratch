@@ -9,14 +9,16 @@ function App() {
   return (
     <div className="App">
       <div>
+        search pokes!
         <PokemonSearch />
       </div>
       <div>
-        <YelpSearch/>
+        search restaurants by city!
+        <YelpSearch />
       </div>
       <div>
-        get the weather, in kelvin!
-        <WeatherSearch/>
+        search weather by city!
+        <WeatherSearch />
       </div>
     </div>
   );
